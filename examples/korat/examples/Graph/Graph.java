@@ -41,7 +41,7 @@ public class Graph {
 
     }
 
-    // helper function to recursive run dsf. If any node is visited twice, means there is a cycle.
+    // helper function to recursive run dsf. If there exists a back edge, then there is a cycle.
     boolean dfs(Vertex v,Set<Vertex> visited,Set<Vertex> path){
         boolean result=true;
         visited.add(v);
@@ -65,6 +65,7 @@ public class Graph {
         return  result;
     }
 
+    //root must be a source in the DAG.
     public boolean repOk() {
         // returns true if and if only the graph reachable from "root"
         // is a directed acyclic graph
@@ -72,10 +73,13 @@ public class Graph {
         Set<Vertex> visited = new HashSet<Vertex>();
         Set<Vertex> path = new HashSet<Vertex>();
 
-          if(dfs(root,visited,path)){
-             if(size==visited.size()){
+        if(size<1){
+            return false;
+        }
+        if(dfs(root,visited,path)){
+            if(size==visited.size()){
                  return true;
-             }
+            }
           }
         return false;
 
