@@ -1,9 +1,12 @@
-package korat.examples.Graph;
+package korat.examples.graph;
 
+import korat.finitization.IArraySet;
 import korat.finitization.IFinitization;
+import korat.finitization.IIntSet;
 import korat.finitization.IObjSet;
 import korat.finitization.impl.FinitizationFactory;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,17 +22,15 @@ public class Graph {
     int size;
     public static class Vertex {
 
+        Vertex[] outgoingEdges;
 
-        public List<Vertex> getOutgoingEdges() {
-
+        public Vertex[] getOutgoingEdges() {
             return outgoingEdges;
         }
 
-        public void setOutgoingEdges(List<Vertex> outgoingEdges) {
+        public void setOutgoingEdges(Vertex[] outgoingEdges) {
             this.outgoingEdges = outgoingEdges;
         }
-
-        List<Vertex> outgoingEdges;
     }
 
     public Graph(Vertex root, int size) {
@@ -42,12 +43,16 @@ public class Graph {
     }
 
     // helper function to recursive run dsf. If there exists a back edge, then there is a cycle.
-    boolean dfs(Vertex v,Set<Vertex> visited,Set<Vertex> path){
+    private boolean dfs(Vertex v,Set<Vertex> visited,Set<Vertex> path){
         boolean result=true;
         visited.add(v);
         path.add(v);
-        if(v.getOutgoingEdges()!=null && v.getOutgoingEdges().size()!=0){
-            for(Vertex child:v.getOutgoingEdges()){
+        if(v.getOutgoingEdges()!=null && v.getOutgoingEdges().length>0){
+//            for(Vertex child:v.getOutgoingEdges()){
+            for(int i=0;i<v.getOutgoingEdges().length;i++){
+                if(v.getOutgoingEdges()[i]==null)
+                    continue;
+                Vertex child = v.getOutgoingEdges()[i];
                 if(path.contains(child)){
                    return false;
                 }
@@ -66,7 +71,7 @@ public class Graph {
     }
 
     //root must be a source in the DAG.
-    public boolean repOk() {
+    public boolean repOK() {
         // returns true if and if only the graph reachable from "root"
         // is a directed acyclic graph
 
@@ -82,13 +87,16 @@ public class Graph {
             }
           }
         return false;
-
-
     }
+
     public static IFinitization finGraph(int nodesNum) {
         IFinitization f = FinitizationFactory.create(Graph.class);
-        IObjSet nodes = f.createObjSet(Vertex.class, nodesNum);
+        IIntSet arrLen = f.createIntSet(0, nodesNum - 1);
+        IObjSet nodes = f.createObjSet(Vertex.class, nodesNum,false);
+        IArraySet childrenArray = f.createArraySet(Vertex[].class, arrLen, nodes, nodesNum);
+        f.set("Vertex.outgoingEdges",childrenArray);
         f.set("root", nodes);
+        f.set("size", f.createIntSet(nodesNum));
         return f;
     }
 }

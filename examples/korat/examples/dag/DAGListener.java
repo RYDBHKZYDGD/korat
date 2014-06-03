@@ -125,7 +125,7 @@ public class DAGListener implements ITestCaseListener {
                 }
             ps = new PrintStream(new FileOutputStream(f));
             ps.print(graph + "\n");
-            System.out.println("Graph saved as " + f.getAbsolutePath());
+            System.out.println("graph saved as " + f.getAbsolutePath());
         } catch (Exception e) {
             System.err.println("Cannot save graph file to disk. Reason: "
                     + e.getMessage());

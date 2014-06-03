@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="korat">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/korat.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
