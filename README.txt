@@ -34,7 +34,7 @@ To run some Korat examples, you need to add to the Java classpath
 either a korat.jar binary, e.g.,
   export KORAT_CP=$DOWNLOAD_DIRECTORY/korat.jar
 or the Korat classes and all the jar files from the library, e.g.,
-  s:...
+  export KORAT_CP=$KORAT_HOME/build:$KORAT_HOME/lib/javassist.jar:...
 
 You can then run some examples such as these:
 

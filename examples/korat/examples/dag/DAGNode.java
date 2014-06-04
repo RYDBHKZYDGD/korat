@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.Stack;
 
 /**
- * Node for Direct Acyclic graph. Contains array of DAGNodes, that represent the
+ * Node for Direct Acyclic Graph. Contains array of DAGNodes, that represent the
  * children of a given DAGNode.
  * 
  * @see DAG

@@ -22,6 +22,7 @@ public class Graph {
     int size;
     public static class Vertex {
 
+
         Vertex[] outgoingEdges;
 
         public Vertex[] getOutgoingEdges() {
@@ -30,6 +31,13 @@ public class Graph {
 
         public void setOutgoingEdges(Vertex[] outgoingEdges) {
             this.outgoingEdges = outgoingEdges;
+        }
+
+        public Vertex(Vertex[] outgoingEdges) {
+            this.outgoingEdges = outgoingEdges;
+        }
+        public  Vertex(){
+
         }
     }
 
@@ -91,12 +99,13 @@ public class Graph {
 
     public static IFinitization finGraph(int nodesNum) {
         IFinitization f = FinitizationFactory.create(Graph.class);
+        f.set("size", f.createIntSet(nodesNum));
+        IObjSet nodes = f.createObjSet(Graph.Vertex.class, nodesNum,false);
+        f.set("root", nodes);
         IIntSet arrLen = f.createIntSet(0, nodesNum - 1);
-        IObjSet nodes = f.createObjSet(Vertex.class, nodesNum,false);
         IArraySet childrenArray = f.createArraySet(Vertex[].class, arrLen, nodes, nodesNum);
         f.set("Vertex.outgoingEdges",childrenArray);
-        f.set("root", nodes);
-        f.set("size", f.createIntSet(nodesNum));
+
         return f;
     }
 }
