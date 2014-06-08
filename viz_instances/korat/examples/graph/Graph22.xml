@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<alloy>
+<instance filename="" command="Graph">
+
+  <sig name="Graph" extends="Object">
+    <atom name="Graph0"/>
+  </sig>
+  <sig name="Int" extends="univ">
+    <atom name="4"/>
+  </sig>
+  <sig name="Vertex" extends="Object">
+    <atom name="Vertex0"/>
+    <atom name="Vertex2"/>
+    <atom name="Vertex1"/>
+    <atom name="Vertex3"/>
+  </sig>
+  <sig name="Object" extends="univ">
+    <atom name="Graph0"/>
+    <atom name="Vertex0"/>
+    <atom name="Vertex2"/>
+    <atom name="Vertex1"/>
+    <atom name="Vertex3"/>
+  </sig>
+
+  <field name="root">
+    <type>
+      <sig name="Graph"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Graph0"/>
+      <atom name="Vertex0"/>
+    </tuple>
+  </field>
+  <field name="size">
+    <type>
+      <sig name="Graph"/>
+      <sig name="Int"/>
+    </type>
+    <tuple>
+      <atom name="Graph0"/>
+      <atom name="4"/>
+    </tuple>
+  </field>
+  <field name="outgoingEdges_0">
+    <type>
+      <sig name="Vertex"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Vertex0"/>
+      <atom name="Vertex1"/>
+    </tuple>
+  </field>
+  <field name="outgoingEdges_1">
+    <type>
+      <sig name="Vertex"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Vertex0"/>
+      <atom name="Vertex2"/>
+    </tuple>
+  </field>
+  <field name="outgoingEdges_0">
+    <type>
+      <sig name="Vertex"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Vertex1"/>
+      <atom name="Vertex3"/>
+    </tuple>
+  </field>
+  <field name="outgoingEdges_1">
+    <type>
+      <sig name="Vertex"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Vertex1"/>
+      <atom name="Vertex2"/>
+    </tuple>
+  </field>
+  <field name="outgoingEdges_0">
+    <type>
+      <sig name="Vertex"/>
+      <sig name="Vertex"/>
+    </type>
+    <tuple>
+      <atom name="Vertex3"/>
+      <atom name="Vertex2"/>
+    </tuple>
+  </field>
+
+</instance>
+</alloy>

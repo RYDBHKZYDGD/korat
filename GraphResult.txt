@@ -1,0 +1,40 @@
+
+Start of Korat Execution for korat.examples.graph.Graph (repOK, [1])
+
+Total explored:1
+New found:1
+
+End of Korat Execution
+Overall time: 0.164 s.
+
+Start of Korat Execution for korat.examples.graph.Graph (repOK, [2])
+
+Total explored:5
+New found:1
+
+End of Korat Execution
+Overall time: 0.164 s.
+
+Start of Korat Execution for korat.examples.graph.Graph (repOK, [3])
+
+Total explored:57
+New found:4
+
+End of Korat Execution
+Overall time: 0.173 s.
+
+Start of Korat Execution for korat.examples.graph.Graph (repOK, [4])
+
+Total explored:1205
+New found:57
+
+End of Korat Execution
+Overall time: 0.235 s.
+
+Start of Korat Execution for korat.examples.graph.Graph (repOK, [5])
+
+Total explored:58785
+New found:3399
+
+End of Korat Execution
+Overall time: 0.551 s.

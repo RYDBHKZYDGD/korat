@@ -6,16 +6,18 @@
     <atom name="DAG0"/>
   </sig>
   <sig name="Int" extends="univ">
-    <atom name="3"/>
+    <atom name="4"/>
   </sig>
   <sig name="DAGNode" extends="Object">
     <atom name="DAGNode0"/>
+    <atom name="DAGNode3"/>
     <atom name="DAGNode2"/>
     <atom name="DAGNode1"/>
   </sig>
   <sig name="Object" extends="univ">
     <atom name="DAG0"/>
     <atom name="DAGNode0"/>
+    <atom name="DAGNode3"/>
     <atom name="DAGNode2"/>
     <atom name="DAGNode1"/>
   </sig>
@@ -37,7 +39,7 @@
     </type>
     <tuple>
       <atom name="DAG0"/>
-      <atom name="3"/>
+      <atom name="4"/>
     </tuple>
   </field>
   <field name="children_0">
@@ -58,6 +60,16 @@
     <tuple>
       <atom name="DAGNode0"/>
       <atom name="DAGNode2"/>
+    </tuple>
+  </field>
+  <field name="children_2">
+    <type>
+      <sig name="DAGNode"/>
+      <sig name="DAGNode"/>
+    </type>
+    <tuple>
+      <atom name="DAGNode0"/>
+      <atom name="DAGNode3"/>
     </tuple>
   </field>
 
